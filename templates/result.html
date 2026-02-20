@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prediction Result</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background: linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+text-align:center;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+font-weight:bold;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* CARD */
+.card{
+background:white;
+color:black;
+width:420px;
+margin:50px auto;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+img{
+width:250px;
+border-radius:12px;
+margin:20px 0;
+}
+
+/* STATUS COLORS */
+.fresh{color:green;font-weight:bold;}
+.spoiled{color:red;font-weight:bold;}
+
+/* PROGRESS BAR */
+.progress{
+background:#eee;
+border-radius:10px;
+height:20px;
+margin-top:10px;
+}
+
+.bar{
+height:100%;
+border-radius:10px;
+background:#28a745;
+}
+
+/* BUTTON */
+button{
+padding:12px 20px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:8px;
+margin-top:20px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+<div>🍎 Smart Sorting</div>
+<div>
+<a href="/">Home</a>
+<a href="/about">About</a>
+</div>
+</div>
+
+<div class="card">
+
+<h2>Prediction Result</h2>
+
+<img src="/{{ image_path }}" alt="Uploaded Image">
+
+<p>
+Quality Status:
+<span class="{% if quality=='Fresh' %}fresh{% else %}spoiled{% endif %}">
+{{ quality }}
+</span>
+</p>
+
+<p>Detected Fruit: <b>{{ fruit }}</b></p>
+
+<!-- confidence already has % from app.py -->
+<p>Confidence: <b>{{ confidence }}</b></p>
+
+<!-- Progress bar -->
+<div class="progress">
+<div class="bar" style="width: {{ confidence }};"></div>
+</div>
+
+<a href="/">
+<button>⬅ Back to Home</button>
+</a>
+
+</div>
+
+</body>
+</html>

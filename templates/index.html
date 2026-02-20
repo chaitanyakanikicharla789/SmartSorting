@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Sorting System</title>
+
+<style>
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+font-weight:bold;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* HERO SECTION */
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+opacity:0.9;
+}
+
+/* CARD */
+.card{
+background:white;
+color:black;
+width:400px;
+margin:40px auto;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FILE BUTTON */
+input[type="file"]{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+margin-top:10px;
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:14px;
+background:#28a745;
+border:none;
+color:white;
+font-size:16px;
+border-radius:8px;
+margin-top:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#218838;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+<div>🍎 Smart Sorting</div>
+<div>
+<a href="/">Home</a>
+<a href="/about">About</a>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<h1>🌱 Smart Sorting System</h1>
+<p>AI Powered Fruit & Vegetable Classification</p>
+</div>
+
+<!-- UPLOAD CARD -->
+<div class="card">
+<h3>📤 Upload Image for Classification</h3>
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+<label>Select Fruit Image</label>
+<input type="file" name="file" required>
+<button type="submit">Classify Fruit</button>
+</form>
+
+</div>
+
+</body>
+</html>
